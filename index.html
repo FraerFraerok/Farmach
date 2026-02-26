@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmach — МАКСИМАЛЬНО РАБОЧАЯ ВЕРСИЯ</title>
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+</head>
+<body>
+    <!-- ШАПКА САЙТА -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-farm">Farm</span><span class="logo-ach">ach</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link active" data-page="home">Главная</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="catalog">Каталог</a></li>
+                    <!-- <li class="nav-item"><a href="#" class="nav-link" data-page="products">Товары</a></li> -->
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="about">О нас</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="delivery">Доставка</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="payment">Оплата</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="reviews">Отзывы</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="blog">Блог</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="faq">FAQ</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <div class="action-item search-trigger" id="searchTrigger">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="action-item favorites" id="favoritesIcon">
+                    <i class="far fa-heart"></i>
+                    <span class="action-badge" id="favoritesBadge">0</span>
+                </div>
+                <div class="action-item cart" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="action-badge" id="cartBadge">0</span>
+                </div>
+                <div class="action-item user" id="userIcon">
+                    <i class="far fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Поисковая строка (скрыта по умолчанию) -->
+        <div class="search-bar" id="searchBar">
+            <div class="search-container">
+                <input type="text" id="globalSearch" placeholder="Поиск среди 500+ товаров...">
+                <button id="globalSearchBtn"><i class="fas fa-search"></i> Найти</button>
+                <button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="main-content">
+        <!-- ГЛАВНАЯ СТРАНИЦА -->
+        <section id="home-page" class="page active-page">
+            <!-- Hero секция -->
+            <section class="hero-section">
+                <div class="hero-slider">
+                    <div class="hero-slide active">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Спортивное питание <span class="highlight">премиум</span> качества</h1>
+                            <p class="hero-subtitle">Оригинальная продукция от мировых брендов с доставкой по всей России</p>
+                            <div class="hero-buttons">
+                                <button class="hero-btn primary" id="heroCatalogBtn">Перейти в каталог</button>
+                                <button class="hero-btn secondary" id="heroAboutBtn">О компании</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Полоса преимуществ -->
+            <section class="advantages-bar">
+                <div class="advantages-container">
+                    <div class="advantage-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <h4>Бесплатная доставка</h4>
+                            <p>от 5000₽ по Москве</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Гарантия качества</h4>
+                            <p>100% оригинал</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Работаем 24/7</h4>
+                            <p>без выходных</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-percent"></i>
+                        <div>
+                            <h4>Скидки до 30%</h4>
+                            <p>постоянным клиентам</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-credit-card"></i>
+                        <div>
+                            <h4>Удобная оплата</h4>
+                            <p>карты, наличные, сбп</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Категории товаров -->
+            <section class="categories-section">
+                <div class="section-header">
+                    <h2 class="section-title">Популярные категории</h2>
+                    <a href="#" class="section-link" data-page="catalog">Все категории <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card" data-category="proteins">
+                        <div class="category-icon"><i class="fas fa-flask"></i></div>
+                        <h3>Протеины</h3>
+                        <p>от 1200₽</p>
+                    </div>
+                    <div class="category-card" data-category="creatine">
+                        <div class="category-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Креатин</h3>
+                        <p>от 800₽</p>
+                    </div>
+                    <div class="category-card" data-category="bcaa">
+                        <div class="category-icon"><i class="fas fa-droplet"></i></div>
+                        <h3>BCAA</h3>
+                        <p>от 1500₽</p>
+                    </div>
+                    <div class="category-card" data-category="amino">
+                        <div class="category-icon"><i class="fas fa-capsules"></i></div>
+                        <h3>Аминокислоты</h3>
+                        <p>от 900₽</p>
+                    </div>
+                    <div class="category-card" data-category="vitamins">
+                        <div class="category-icon"><i class="fas fa-tablets"></i></div>
+                        <h3>Витамины</h3>
+                        <p>от 500₽</p>
+                    </div>
+                    <div class="category-card" data-category="fatburn">
+                        <div class="category-icon"><i class="fas fa-fire"></i></div>
+                        <h3>Жиросжигатели</h3>
+                        <p>от 1800₽</p>
+                    </div>
+                    <div class="category-card" data-category="gainers">
+                        <div class="category-icon"><i class="fas fa-weight-scale"></i></div>
+                        <h3>Гейнеры</h3>
+                        <p>от 1600₽</p>
+                    </div>
+                    <div class="category-card" data-category="bars">
+                        <div class="category-icon"><i class="fas fa-candy-bar"></i></div>
+                        <h3>Батончики</h3>
+                        <p>от 150₽</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Бегущая лента брендов -->
+            <section class="brands-ticker-section">
+                <div class="brands-ticker-container">
+                    <div class="brands-ticker">
+                        <div class="ticker-track">
+                            <span class="ticker-item"><i class="fab fa-nutritionix"></i> BioTech</span>
+                            <span class="ticker-item"><i class="fas fa-dumbbell"></i> Optimum Nutrition</span>
+                            <span class="ticker-item"><i class="fas fa-leaf"></i> Syntrax</span>
+                            <span class="ticker-item"><i class="fas fa-bolt"></i> BSN</span>
+                            <span class="ticker-item"><i class="fas fa-fire"></i> Dymatize</span>
+                            <span class="ticker-item"><i class="fas fa-weight-hanging"></i> Weider</span>
+                            <span class="ticker-item"><i class="fas fa-muscle"></i> MuscleTech</span>
+                            <span class="ticker-item"><i class="fas fa-star"></i> GNC</span>
+                            <span class="ticker-item"><i class="fas fa-globe"></i> Universal</span>
+                            <span class="ticker-item"><i class="fas fa-seedling"></i> NOW Foods</span>
+                            <span class="ticker-item"><i class="fab fa-nutritionix"></i> BioTech</span>
+                            <span class="ticker-item"><i class="fas fa-dumbbell"></i> Optimum Nutrition</span>
+                            <span class="ticker-item"><i class="fas fa-leaf"></i> Syntrax</span>
+                            <span class="ticker-item"><i class="fas fa-bolt"></i> BSN</span>
+                            <span class="ticker-item"><i class="fas fa-fire"></i> Dymatize</span>
+                            <span class="ticker-item"><i class="fas fa-weight-hanging"></i> Weider</span>
+                            <span class="ticker-item"><i class="fas fa-muscle"></i> MuscleTech</span>
+                            <span class="ticker-item"><i class="fas fa-star"></i> GNC</span>
+                            <span class="ticker-item"><i class="fas fa-globe"></i> Universal</span>
+                            <span class="ticker-item"><i class="fas fa-seedling"></i> NOW Foods</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Хиты продаж -->
+            <section class="featured-products">
+                <div class="section-header">
+                    <h2 class="section-title">Хиты продаж</h2>
+                    <div class="section-controls">
+                        <button class="slider-prev" id="hitsPrev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-next" id="hitsNext"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="products-slider" id="hitsSlider">
+                    <div class="slider-track" id="hitsTrack"></div>
+                </div>
+            </section>
+            
+            <!-- Новинки -->
+            <section class="new-products">
+                <div class="section-header">
+                    <h2 class="section-title">Новинки</h2>
+                    <div class="section-controls">
+                        <button class="slider-prev" id="newPrev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-next" id="newNext"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="products-slider" id="newSlider">
+                    <div class="slider-track" id="newTrack"></div>
+                </div>
+            </section>
+            
+            <!-- Акции и скидки -->
+            <section class="promo-banners">
+                <div class="promo-grid">
+                    <div class="promo-card large" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">
+                        <div class="promo-content">
+                            <span class="promo-tag">-15%</span>
+                            <h3>Первый заказ</h3>
+                            <p>Скидка на первую покупку</p>
+                            <button class="promo-btn" data-page="catalog">Выбрать товары</button>
+                        </div>
+                    </div>
+                    <div class="promo-card medium" style="background: linear-gradient(135deg, #FF8E8E, #FFB6B6);">
+                        <div class="promo-content">
+                            <span class="promo-tag">Бесплатно</span>
+                            <h3>Доставка от 5000₽</h3>
+                            <p>По Москве и области</p>
+                        </div>
+                    </div>
+                    <div class="promo-card small" style="background: linear-gradient(135deg, #FFB6B6, #FFD6D6);">
+                        <div class="promo-content">
+                            <h3>Подарок</h3>
+                            <p>Шейкер в подарок</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Преимущества детально -->
+            <section class="benefits-section">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
+                        <h3>Оригинальная продукция</h3>
+                        <p>Все товары имеют сертификаты качества и поставляются напрямую от производителей</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-truck-fast"></i></div>
+                        <h3>Быстрая доставка</h3>
+                        <p>Отправляем заказы в день оформления. Бесплатная доставка от 5000₽</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Поддержка 24/7</h3>
+                        <p>Наши консультанты всегда онлайн, помогут с выбором и ответят на вопросы</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-undo-alt"></i></div>
+                        <h3>Легкий возврат</h3>
+                        <p>Возврат товара в течение 14 дней без лишних вопросов</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-gift"></i></div>
+                        <h3>Подарки и скидки</h3>
+                        <p>Постоянные акции, бонусы и подарки для наших клиентов</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-lock"></i></div>
+                        <h3>Безопасная оплата</h3>
+                        <p>Все платежи защищены, данные не передаются третьим лицам</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Блог -->
+            <section class="blog-preview">
+                <div class="section-header">
+                    <h2 class="section-title">Полезные статьи</h2>
+                    <a href="#" class="section-link" data-page="blog">Все статьи <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image"><i class="fas fa-dumbbell"></i></div>
+                        <div class="blog-content">
+                            <span class="blog-date">15.03.2024</span>
+                            <h3>Как выбрать протеин</h3>
+                            <p>Полное руководство по выбору протеина для разных целей</p>
+                            <a href="#" class="blog-link">Читать <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image"><i class="fas fa-clock"></i></div>
+                        <div class="blog-content">
+                            <span class="blog-date">10.03.2024</span>
+                            <h3>Лучшее время для приема BCAA</h3>
+                            <p>Когда и как принимать BCAA для максимального эффекта</p>
+                            <a href="#" class="blog-link">Читать <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image"><i class="fas fa-apple-alt"></i></div>
+                        <div class="blog-content">
+                            <span class="blog-date">05.03.2024</span>
+                            <h3>Витамины для спортсменов</h3>
+                            <p>Какие витамины необходимы при активных тренировках</p>
+                            <a href="#" class="blog-link">Читать <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Подписка на рассылку -->
+            <section class="newsletter-section">
+                <div class="newsletter-container">
+                    <div class="newsletter-content">
+                        <h3>Подпишитесь на рассылку</h3>
+                        <p>Получайте информацию о новых поступлениях и эксклюзивных скидках</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="Ваш email" required>
+                            <button type="submit">Подписаться</button>
+                        </form>
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked> Согласен на обработку персональных данных
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- СТРАНИЦА КАТАЛОГА -->
+        <section id="catalog-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Каталог товаров</h1>
+                <p class="page-subtitle">Более 500 наименований спортивного питания от ведущих производителей</p>
+            </div>
+            
+            <div class="catalog-layout">
+                <!-- Фильтры (левая колонка) -->
+                <aside class="filters-sidebar">
+                    <h3>Фильтры</h3>
+                    
+                    <div class="filter-section">
+                        <h4>Категория</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" name="category" value="proteins"> Протеины (24)</label>
+                            <label><input type="checkbox" name="category" value="creatine"> Креатин (12)</label>
+                            <label><input type="checkbox" name="category" value="bcaa"> BCAA (15)</label>
+                            <label><input type="checkbox" name="category" value="amino"> Аминокислоты (18)</label>
+                            <label><input type="checkbox" name="category" value="vitamins"> Витамины (32)</label>
+                            <label><input type="checkbox" name="category" value="fatburn"> Жиросжигатели (9)</label>
+                            <label><input type="checkbox" name="category" value="gainers"> Гейнеры (11)</label>
+                            <label><input type="checkbox" name="category" value="bars"> Батончики (24)</label>
+                            <label><input type="checkbox" name="category" value="accessories"> Аксессуары (16)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Цена</h4>
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <input type="number" id="minPrice" placeholder="от" value="0">
+                                <span>-</span>
+                                <input type="number" id="maxPrice" placeholder="до" value="10000">
+                            </div>
+                            <button class="apply-price-btn" id="applyPriceFilter">Применить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Бренд</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" name="brand" value="biotech"> BioTech (18)</label>
+                            <label><input type="checkbox" name="brand" value="on"> Optimum Nutrition (22)</label>
+                            <label><input type="checkbox" name="brand" value="syntrax"> Syntrax (9)</label>
+                            <label><input type="checkbox" name="brand" value="bsn"> BSN (12)</label>
+                            <label><input type="checkbox" name="brand" value="dymatize"> Dymatize (15)</label>
+                            <label><input type="checkbox" name="brand" value="weider"> Weider (10)</label>
+                            <label><input type="checkbox" name="brand" value="muscletech"> MuscleTech (14)</label>
+                            <label><input type="checkbox" name="brand" value="gnc"> GNC (8)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Вес</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" name="weight" value="250"> до 250г (12)</label>
+                            <label><input type="checkbox" name="weight" value="500"> 250-500г (24)</label>
+                            <label><input type="checkbox" name="weight" value="1000"> 500-1000г (32)</label>
+                            <label><input type="checkbox" name="weight" value="2000"> более 1000г (18)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Вкус</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" name="flavor" value="chocolate"> Шоколад (24)</label>
+                            <label><input type="checkbox" name="flavor" value="vanilla"> Ваниль (18)</label>
+                            <label><input type="checkbox" name="flavor" value="strawberry"> Клубника (15)</label>
+                            <label><input type="checkbox" name="flavor" value="banana"> Банан (12)</label>
+                            <label><input type="checkbox" name="flavor" value="neutral"> Без вкуса (8)</label>
+                        </div>
+                    </div>
+                    
+                    <button class="reset-filters-btn" id="resetFilters">Сбросить все фильтры</button>
+                </aside>
+                
+                <!-- Результаты (правая колонка) -->
+                <div class="catalog-results">
+                    <div class="catalog-toolbar">
+                        <div class="sorting">
+                            <span>Сортировка:</span>
+                            <select id="sortProducts">
+                                <option value="popular">По популярности</option>
+                                <option value="price-asc">Сначала дешевле</option>
+                                <option value="price-desc">Сначала дороже</option>
+                                <option value="new">Сначала новинки</option>
+                                <option value="rating">По рейтингу</option>
+                                <option value="discount">По скидке</option>
+                            </select>
+                        </div>
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                            <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="products-count" id="catalogCount">Найдено: <span id="foundCount">124</span> товаров</div>
+                    
+                    <div class="products-grid" id="catalogProducts" data-view="grid"></div>
+                    
+                    <div class="load-more">
+                        <button class="load-more-btn" id="loadMoreProducts">Показать еще 12 товаров</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА ТОВАРОВ (все товары) -->
+        <section id="products-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Все товары</h1>
+                <p class="page-subtitle">Полный ассортимент спортивного питания</p>
+            </div>
+            
+            <div class="products-showcase">
+                <div class="showcase-tabs">
+                    <button class="showcase-tab active" data-showcase="all">Все товары</button>
+                    <button class="showcase-tab" data-showcase="popular">Популярные</button>
+                    <button class="showcase-tab" data-showcase="new">Новинки</button>
+                    <button class="showcase-tab" data-showcase="sale">Скидки %</button>
+                    <button class="showcase-tab" data-showcase="hit">Хиты продаж</button>
+                </div>
+                
+                <div class="showcase-products" id="showcaseProducts"></div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА О НАС -->
+        <section id="about-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">О компании Farmach</h1>
+                <p class="page-subtitle">Мы делаем спорт доступным с 2015 года</p>
+            </div>
+            
+            <div class="about-hero">
+                <div class="about-stats">
+                    <!-- <div class="stat-block">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">лет на рынке</div>
+                    </div> -->
+                    <div class="stat-block">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">товаров</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">15k+</div>
+                        <div class="stat-label">клиентов</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">поддержка</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">брендов</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">оригинал</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text-block">
+                    <h2>Наша история</h2>
+                    <p>Farmach — это команда профессионалов, объединенных любовью к спорту и здоровому образу жизни. Сегодня доставляем спортивное питание по всей России.</p>
+                    <p>Наша миссия — делать качественное спортивное питание доступным для каждого. Мы тщательно отбираем бренды, с которыми работаем, и гарантируем 100% оригинальность всей продукции. В нашем ассортименте представлены только сертифицированные товары от ведущих мировых производителей.</p>
+                </div>
+                
+                <div class="about-values">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Забота о клиентах</h3>
+                        <p>Мы ценим каждого клиента и всегда готовы помочь с выбором</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Честность</h3>
+                        <p>Мы не продаем подделки и всегда говорим правду о товарах</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Развитие</h3>
+                        <p>Постоянно расширяем ассортимент и улучшаем сервис</p>
+                    </div>
+                </div>
+                
+                <div class="about-team">
+                    <h2>Наша команда</h2>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-photo"><i class="fas fa-user-circle"></i></div>
+                            <h3>Дирин Тимофей</h3>
+                            <p>Основатель, CEO</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-photo"><i class="fas fa-user-circle"></i></div>
+                            <h3>Великсарь Евгений</h3>
+                            <p>Руководитель отдела продаж</p>
+                        </div>
+                       
+                    </div>
+                </div>
+                
+                <div class="about-certificates">
+                    <h2>Сертификаты и лицензии</h2>
+                    <div class="certificates-grid">
+                        <div class="certificate-card"><i class="fas fa-file-pdf"></i> Сертификат соответствия</div>
+                        <div class="certificate-card"><i class="fas fa-file-pdf"></i> Лицензия на деятельность</div>
+                        <div class="certificate-card"><i class="fas fa-file-pdf"></i> Декларация качества</div>
+                        <div class="certificate-card"><i class="fas fa-file-pdf"></i> Гигиенический сертификат</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА ДОСТАВКА -->
+        <section id="delivery-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Доставка</h1>
+                <p class="page-subtitle">Мы доставляем заказы по всей России</p>
+            </div>
+            
+            <div class="delivery-methods">
+                <div class="method-card">
+                    <i class="fas fa-bicycle"></i>
+                    <h3>Курьерская доставка</h3>
+                    <p>По Москве — 300₽, бесплатно при заказе от 5000₽. Доставка осуществляется на следующий день после заказа в интервале с 10:00 до 22:00.</p>
+                    <p class="method-note">* Курьер свяжется с вами за час до приезда</p>
+                </div>
+                
+                <div class="method-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Самовывоз</h3>
+                    <p>Адрес: Москва, ул. Курганская, д. 5, стр. 1 (метро Курская).</p>
+                    <p>Время работы: ежедневно с 10:00 до 22:00.</p>
+                    <p class="method-note">* Заказ можно забрать через 2 часа после оформления</p>
+                </div>
+                
+                <div class="method-card">
+                    <i class="fas fa-train"></i>
+                    <h3>Почта России</h3>
+                    <p>Отправляем в любой город РФ. Стоимость от 350₽ в зависимости от веса и региона.</p>
+                    <p>Сроки доставки: 3-14 дней.</p>
+                </div>
+                
+                <div class="method-card">
+                    <i class="fas fa-box"></i>
+                    <h3>СДЭК</h3>
+                    <p>Доставка до пункта выдачи или курьером до двери.</p>
+                    <p>Стоимость рассчитывается автоматически при оформлении заказа.</p>
+                    <p>Сроки: 2-7 дней.</p>
+                </div>
+                
+                <div class="method-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Авиа доставка</h3>
+                    <p>Для отдаленных регионов (Дальний Восток, Сибирь).</p>
+                    <p>Сроки: 3-5 дней. Уточняйте стоимость у менеджера.</p>
+                </div>
+                
+                <div class="method-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Транспортная компания</h3>
+                    <p>Отправка любой ТК по вашему выбору (Деловые линии, ПЭК, Байкал Сервис).</p>
+                </div>
+            </div>
+            
+            <div class="delivery-map">
+                <h2>Зоны доставки</h2>
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <p>Интерактивная карта зон доставки</p>
+                </div>
+            </div>
+            
+            <div class="delivery-info">
+                <h2>Важная информация</h2>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> При доставке курьером возможна оплата наличными или картой</li>
+                    <li><i class="fas fa-check-circle"></i> Все заказы упаковываются в непрозрачные пакеты</li>
+                    <li><i class="fas fa-check-circle"></i> Вы можете отслеживать статус заказа в личном кабинете</li>
+                    <li><i class="fas fa-check-circle"></i> При задержке доставки мы вернем стоимость доставки</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА ОПЛАТА -->
+        <section id="payment-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Оплата</h1>
+                <p class="page-subtitle">Удобные способы оплаты для наших клиентов</p>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-category">
+                    <h2>Банковские карты</h2>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-mir"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-jcb"></i>
+                    </div>
+                    <p>Оплата картами МИР, Сбер, Альфа. Комиссия не взимается.</p>
+                </div>
+                
+                <div class="payment-category">
+                    <h2>Электронные кошельки</h2>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fas fa-qrcode"></i>
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <p>PayPal, ЮMoney, Qiwi, WebMoney. Мгновенное зачисление.</p>
+                </div>
+                
+                <div class="payment-category">
+                    <h2>СБП (Система быстрых платежей)</h2>
+                    <div class="payment-icons">
+                        <i class="fas fa-qrcode"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <p>Оплата по QR-коду через мобильное приложение вашего банка. Без комиссии.</p>
+                </div>
+                
+                <div class="payment-category">
+                    <h2>Наличные</h2>
+                    <div class="payment-icons">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <p>При самовывозе из магазина или курьеру при получении.</p>
+                </div>
+                
+                <div class="payment-category">
+                    <h2>Безналичный расчет</h2>
+                    <div class="payment-icons">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <p>Для юридических лиц и ИП. Выставляем счета с НДС и без.</p>
+                </div>
+                
+                <!-- <div class="payment-category">
+                    <h2>Криптовалюта</h2>
+                    <div class="payment-icons">
+                        <i class="fab fa-bitcoin"></i>
+                        <i class="fab fa-ethereum"></i>
+                    </div>
+                    <p>Bitcoin, Ethereum, USDT. Курс конвертации по бирже.</p>
+                </div> -->
+            </div>
+            
+            <div class="payment-security">
+                <h2>Безопасность платежей</h2>
+                <div class="security-features">
+                    <div class="security-item">
+                        <i class="fas fa-lock"></i>
+                        <h3>SSL шифрование</h3>
+                        <p>Все данные передаются в зашифрованном виде</p>
+                    </div>
+                    <div class="security-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>3D Secure</h3>
+                        <p>Подтверждение платежа через SMS</p>
+                    </div>
+                    <div class="security-item">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Анонимность</h3>
+                        <p>Данные карты не хранятся на сервере</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА ОТЗЫВЫ -->
+        <section id="reviews-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Отзывы клиентов</h1>
+                <p class="page-subtitle">Более 5000 положительных отзывов</p>
+            </div>
+            
+            <div class="reviews-stats">
+                <div class="overall-rating">
+                    <div class="rating-number">4.8</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-count">на основе 5321 отзыва</div>
+                </div>
+                
+                <div class="rating-distribution">
+                    <div class="distribution-row">
+                        <span>5 звезд</span>
+                        <div class="distribution-bar"><div style="width: 85%"></div></div>
+                        <span>85%</span>
+                    </div>
+                    <div class="distribution-row">
+                        <span>4 звезды</span>
+                        <div class="distribution-bar"><div style="width: 10%"></div></div>
+                        <span>10%</span>
+                    </div>
+                    <div class="distribution-row">
+                        <span>3 звезды</span>
+                        <div class="distribution-bar"><div style="width: 3%"></div></div>
+                        <span>3%</span>
+                    </div>
+                    <div class="distribution-row">
+                        <span>2 звезды</span>
+                        <div class="distribution-bar"><div style="width: 1%"></div></div>
+                        <span>1%</span>
+                    </div>
+                    <div class="distribution-row">
+                        <span>1 звезда</span>
+                        <div class="distribution-bar"><div style="width: 1%"></div></div>
+                        <span>1%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reviews-filter">
+                <select id="reviewsSort">
+                    <option>Сначала новые</option>
+                    <option>Сначала старые</option>
+                    <option>Сначала с высоким рейтингом</option>
+                    <option>Сначала с низким рейтингом</option>
+                </select>
+                <button class="write-review-btn" id="writeReviewBtn">Написать отзыв</button>
+            </div>
+            
+            <div class="reviews-list" id="reviewsList"></div>
+            
+            <button class="load-more-reviews">Загрузить еще отзывы</button>
+        </section>
+
+        <!-- СТРАНИЦА БЛОГ -->
+        <section id="blog-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Блог Farmach</h1>
+                <p class="page-subtitle">Полезные статьи о спортивном питании и тренировках</p>
+            </div>
+            
+            <div class="blog-categories">
+                <button class="blog-cat active">Все статьи</button>
+                <button class="blog-cat">Питание</button>
+                <button class="blog-cat">Тренировки</button>
+                <button class="blog-cat">Новинки</button>
+                <button class="blog-cat">Советы экспертов</button>
+            </div>
+            
+            <div class="blog-grid-full" id="blogPosts"></div>
+        </section>
+
+        <!-- СТРАНИЦА FAQ -->
+        <section id="faq-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Часто задаваемые вопросы</h1>
+                <p class="page-subtitle">Ответы на популярные вопросы</p>
+            </div>
+            
+            <div class="faq-search">
+                <input type="text" placeholder="Поиск по вопросам...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="faq-categories">
+                <button class="faq-cat active">Все вопросы</button>
+                <button class="faq-cat">Доставка</button>
+                <button class="faq-cat">Оплата</button>
+                <button class="faq-cat">Товары</button>
+                <button class="faq-cat">Возврат</button>
+            </div>
+            
+            <div class="faq-accordion" id="faqAccordion">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как оформить заказ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для оформления заказа добавьте товары в корзину, перейдите в корзину и нажмите "Оформить заказ". Заполните контактные данные и выберите способ доставки и оплаты.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Сколько идет доставка?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>По Москве доставка осуществляется на следующий день. В регионы сроки доставки составляют от 3 до 14 дней в зависимости от удаленности.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как вернуть товар?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Вы можете вернуть товар в течение 14 дней при сохранении товарного вида и упаковки. Для возврата свяжитесь с нашим менеджером.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА КОНТАКТЫ -->
+        <section id="contacts-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Контакты</h1>
+                <p class="page-subtitle">Мы всегда на связи и готовы помочь</p>
+            </div>
+            
+            <div class="contacts-grid">
+                <div class="contact-info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Адрес магазина</h3>
+                    <p>Москва, ул. Курганская, д. 5, стр. 1</p>
+                    <p>метро Курская (выход №3)</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Телефон</h3>
+                    <p>8 (968) 442-10-47</p>
+                    <p>8 (800) 555-35-35 (бесплатно по РФ)</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@farmach.ru</p>
+                    <p>tdirin08@gmail.com</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Режим работы</h3>
+                    <p>Пн - Вс: с 10:00 до 22:00</p>
+                    <p>Без выходных</p>
+                </div>
+            </div>
+            
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.5555555555555!2d37.61888888888889!3d55.75111111111111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzA0LjAiTiAzN8KwMzcnMDguMCJF!5e0!3m2!1sru!2sru!4v1620000000000!5m2!1sru!2sru" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
+            </div>
+            
+            <div class="contact-form-section">
+                <h2>Напишите нам</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш email" required>
+                    </div>
+                    <input type="text" placeholder="Тема сообщения">
+                    <textarea placeholder="Сообщение" rows="6" required></textarea>
+                    <button type="submit">Отправить сообщение</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- МОДАЛЬНОЕ ОКНО ТОВАРА -->
+    <div id="productModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="modalProductName">Название товара</h2>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-product">
+                    <div class="modal-product-gallery">
+                        <div class="modal-product-image" id="modalProductImage">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="modal-thumbnails"></div>
+                    </div>
+                    <div class="modal-product-info">
+                        <div class="modal-product-price" id="modalProductPrice">0 ₽</div>
+                        <div class="modal-product-weight" id="modalProductWeight">вес</div>
+                        <div class="modal-product-stock" id="modalProductStock">в наличии</div>
+                        <div class="modal-product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span>(12 отзывов)</span>
+                        </div>
+                        
+                        <div class="modal-product-actions">
+                            <div class="modal-quantity">
+                                <button id="modalQtyDown"><i class="fas fa-minus"></i></button>
+                                <input type="number" id="modalQty" value="1" min="1" max="99">
+                                <button id="modalQtyUp"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <button class="modal-add-to-cart" id="modalAddToCart">В корзину</button>
+                        </div>
+                        
+                        <div class="modal-product-buy-now">
+                            <button class="modal-buy-now" id="modalBuyNow">Купить сейчас</button>
+                        </div>
+                        
+                        <div class="modal-product-description">
+                            <h3>Описание</h3>
+                            <p id="modalProductDescription"></p>
+                        </div>
+                        
+                        <div class="modal-product-features">
+                            <h3>Характеристики</h3>
+                            <table id="modalProductSpecs"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ -->
+    <div id="cartModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container cart-modal">
+            <div class="modal-header">
+                <h2>Корзина <span id="cartModalCount">(0 товаров)</span></h2>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items-list" id="cartModalItems"></div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span>Итого:</span>
+                        <span id="cartModalTotal">0 ₽</span>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="cart-continue" id="cartContinue">Продолжить покупки</button>
+                        <button class="cart-checkout" id="cartCheckout">Оформить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ -->
+    <div id="authModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container auth-modal">
+            <div class="modal-header">
+                <h2>Личный кабинет</h2>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="authLoginTab">Вход</button>
+                    <button class="auth-tab" id="authRegisterTab">Регистрация</button>
+                </div>
+                
+                <div class="auth-form active" id="loginForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" placeholder="Введите email" value="user@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="Введите пароль">
+                    </div>
+                    <div class="form-actions">
+                        <button class="auth-submit" id="loginSubmit">Войти</button>
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+                </div>
+                
+                <div class="auth-form" id="registerForm">
+                    <div class="form-group">
+                        <label>Имя</label>
+                        <input type="text" id="regName" placeholder="Введите имя">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="regEmail" placeholder="Введите email">
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль</label>
+                        <input type="password" id="regPassword" placeholder="Введите пароль">
+                    </div>
+                    <div class="form-group">
+                        <label>Подтверждение пароля</label>
+                        <input type="password" id="regConfirm" placeholder="Повторите пароль">
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="agreeTerms" checked>
+                        <label for="agreeTerms">Я согласен с условиями обработки данных</label>
+                    </div>
+                    <button class="auth-submit" id="registerSubmit">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО УСПЕХА -->
+    <div id="successModal" class="modal success-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-body">
+                <i class="fas fa-check-circle"></i>
+                <h3 id="successMessage">Успешно!</h3>
+                <button class="success-ok" id="successOk">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Farmach</h3>
+                <p>2026 © Farmach.ru</p>
+                <p>Все права защищены</p>
+                <p>ИНН 7712345678</p>
+                <p>ОГРН 1234567890123</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Информация</h3>
+                <ul>
+                    <li><a href="#" data-page="about">О нас</a></li>
+                    <li><a href="#" data-page="delivery">Доставка</a></li>
+                    <li><a href="#" data-page="payment">Оплата</a></li>
+                    <li><a href="#" data-page="reviews">Отзывы</a></li>
+                    <li><a href="#" data-page="blog">Блог</a></li>
+                    <li><a href="#" data-page="faq">FAQ</a></li>
+                    <li><a href="#" data-page="contacts">Контакты</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Каталог</h3>
+                <ul>
+                    <li><a href="#" data-page="catalog">Протеины</a></li>
+                    <li><a href="#" data-page="catalog">Креатин</a></li>
+                    <li><a href="#" data-page="catalog">BCAA</a></li>
+                    <li><a href="#" data-page="catalog">Аминокислоты</a></li>
+                    <li><a href="#" data-page="catalog">Витамины</a></li>
+                    <li><a href="#" data-page="catalog">Жиросжигатели</a></li>
+                    <li><a href="#" data-page="catalog">Гейнеры</a></li>
+                    <li><a href="#" data-page="catalog">Батончики</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Курганская, 5</p>
+                <p><i class="fas fa-phone"></i> 8 (968) 442-10-47</p>
+                <p><i class="fas fa-envelope"></i> info@farmach.ru</p>
+                <p><i class="fas fa-clock"></i> Пн-Вс: 10:00-22:00</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>© 2026 Farmach. Все права защищены. Использование материалов сайта без разрешения запрещено.</p>
+                <div class="payment-methods-footer">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-mir"></i>
+                    <i class="fas fa-qrcode"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- КНОПКА НАВЕРХ -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
