@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             composition: 'Мицеллярный казеин, какао, ароматизатор.',
             usage: '30г на 300мл воды или молока, принимать перед сном.',
             manufacturer: 'Syntrax, США',
-            image: 'https://avatars.mds.yandex.net/i?id=b1a459841f7785e564f36aaf6bab4cf0dcbc7e68-5656601-images-thumbs&n=13'
+            image: 'https://avatars.mds.yandex.net/i?id=c6e82822065baf0b951c34fbfa2778405b034d9c-4011284-images-thumbs&n=13'
         },
         { 
             id: 4, 
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
             composition: 'Рыбий жир, желатин, глицерин.',
             usage: '2 капсулы в день во время еды.',
             manufacturer: 'NOW Foods, США',
-            image: 'https://via.placeholder.com/300x300/FFE8E8/FF6B6B?text=Omega-3'
+            image: 'https://avatars.mds.yandex.net/i?id=ac28cdc36431766b02719671603d96cf75cc2c42-5630042-images-thumbs&n=13'
         },
         { 
             id: 10, 
@@ -1056,11 +1056,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (modalProductDescription) modalProductDescription.textContent = product.description;
         
+        // Добавляем отображение изображения
+        const modalProductImg = document.getElementById('modalProductImg');
+        const modalProductIcon = document.getElementById('modalProductIcon');
+        
+        if (modalProductImg && modalProductIcon) {
+            if (product.image && product.image !== '') {
+                modalProductImg.src = product.image;
+                modalProductImg.style.display = 'block';
+                modalProductIcon.style.display = 'none';
+            } else {
+                modalProductImg.style.display = 'none';
+                modalProductIcon.style.display = 'block';
+            }
+        }
+        
         if (modalProductSpecs) {
             modalProductSpecs.innerHTML = `
-                <tr><td>Производитель</td><td>${product.manufacturer}</td></tr>
-                <tr><td>Состав</td><td>${product.composition}</td></tr>
-                <tr><td>Применение</td><td>${product.usage}</td></tr>
+                <tr><td>Производитель</td><td>${product.manufacturer || 'Не указан'}</td></tr>
+                <tr><td>Состав</td><td>${product.composition || 'Не указан'}</td></tr>
+                <tr><td>Применение</td><td>${product.usage || 'Не указано'}</td></tr>
                 <tr><td>Рейтинг</td><td>${product.rating}/5</td></tr>
                 <tr><td>Отзывы</td><td>${product.reviews}</td></tr>
             `;
